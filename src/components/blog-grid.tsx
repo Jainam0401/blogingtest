@@ -1,21 +1,32 @@
-import { BlogCard } from "./blog-card"
+"use client"
 
-export function BlogGrid() {
+import { BlogCard } from "./blog-card"
+import type { BlogWithUser } from "@/app/page"
+
+type BlogGridProps = {
+  blogs: BlogWithUser[]
+}
+
+export function BlogGrid({ blogs }: BlogGridProps) {
   return (
     <section className="py-10">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        <BlogCard
-          title="How Automation is Transforming CA Offices"
-          excerpt="Join us for a full day of events sharing best practices from"
-        />
-        <BlogCard
-          title="How Automation is Transforming CA Offices"
-          excerpt="Join us for a full day of events sharing best practices from"
-        />
-        <BlogCard
-          title="How Automation is Transforming CA Offices"
-          excerpt="Join us for a full day of events sharing best practices from"
-        />
+        {blogs.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            title={blog.title}
+            excerpt={blog.content}
+            image={blog.image}
+            tags={blog.tags}
+            author={blog.users.name}
+            date={new Date(blog.createdAt).toLocaleDateString("en-IN", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
+            avatar={blog.users.pfp}
+          />
+        ))}
       </div>
     </section>
   )

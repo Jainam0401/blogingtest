@@ -1,49 +1,80 @@
+"use client"
+
 import Image from "next/image"
-import Tags from "./ui/tags"
 
 type BlogCardProps = {
   title: string
   excerpt: string
+  image?: string
+  tags?: string[]
+  author?: string
+  date?: string
+  avatar?: string
 }
 
-export function BlogCard({ title, excerpt }: BlogCardProps) {
+export function BlogCard({
+  title,
+  excerpt,
+  image,
+  tags = [],
+  author = "Unknown Author",
+  date = "",
+  avatar,
+}: BlogCardProps) {
   return (
     <article className="group overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border">
-      <div className="relative h-48 w-full md:h-56">
+      {/* blog image */}
+     {image && <div className="relative h-48 w-full md:h-56">
         <Image
-          src={"/placeholder.svg?height=320&width=640&query=industry%20spark%20bokeh"}
-          alt=""
+          src={"/hero.png"}
+          alt={title}
           fill
           className="object-cover"
         />
-      </div>
+      </div>}
 
       <div className="p-6">
         <h4 className="text-xl font-semibold">{title}</h4>
 
-        <div className="mt-3 flex flex-wrap gap-2">
-         <Tags />
-        </div>
+        {/* tags */}
+        {tags.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className=" h-[32px] flex items-center justify-center px-4 py-1 rounded-[4px] 
+                     bg-[#F0EEEB] shadow-[0_1px_2px_0_#00000026,0_0_5px_0_#1718180D]
+                     text-gray-800 text-sm font-medium mix-blend-multiply0"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
 
-        <p className="mt-3 text-muted-foreground">{excerpt}</p>
+        <p className="mt-3  line-clamp-3">{excerpt}</p>
 
         <div className="mt-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image
-              src={"/placeholder.svg?height=32&width=32&query=circle%20avatar"}
-              alt=""
+              src={avatar || "/avatar-placeholder.png"}
+              alt={author}
               width={32}
               height={32}
               className="rounded-full"
             />
-            <span className="font-medium">Rohit Kadam</span>
+            <span className="font-medium">{author}</span>
           </div>
-          <span className="text-sm text-muted-foreground">13th Jan 2020</span>
+          {date && <span className="text-sm ">{date}</span>}
         </div>
       </div>
 
+
+
+
+
       {/* subtle blue underline accent */}
-      <div className="h-2 w-full bg-brand/20" />
+      <div className="h-2 w-full mt-10 bg-brand/70" />
     </article>
   )
 }

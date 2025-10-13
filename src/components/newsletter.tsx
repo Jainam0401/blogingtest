@@ -8,7 +8,7 @@ export function Newsletter() {
   const [active, setActive] = useState("All")
 
   return (
-    <div className="rounded-2xl w-full bg-sky-200 py-12 px-6 md:px-10">
+    <div className=" w-full bg-sky-200 py-12 px-6 md:px-10">
       {/* Heading Section */}
       <div className="text-center max-w-5xl mx-auto">
         <h2 className="text-balance text-3xl font-semibold md:text-5xl">

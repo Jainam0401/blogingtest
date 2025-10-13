@@ -6,7 +6,7 @@ import Link from "next/link"
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 md:px-6">
+      <div className="mx-auto flex h-16 w-full items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2">
 <Image src="/logo.svg" alt="Logo" width={32} height={32} />
           <span className="text-2xl font-semibold  ">SUVIT</span>

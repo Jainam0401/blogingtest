@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable} ${roboto.variable} ${satoshi.variable} ${lato.variable} `}>
+      <body className={`font-inter ${inter.variable} ${roboto.variable} ${satoshi.variable} ${lato.variable} `}>
         <Suspense fallback={null}>
           
         </Suspense>
