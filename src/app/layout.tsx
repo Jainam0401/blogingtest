@@ -5,6 +5,7 @@ import "./globals.css"
 import { Suspense } from "react"
 
 import { inter, roboto, satoshi,lato } from "@/app/styles/font"
+import { Toaster } from "@/components/ui/sonner"
 export const metadata: Metadata = {
   title: "SUVIT - Professional Content Writing, SEO, and Translation Services",
   description: "Professional content writing, SEO content, and translation services for effective communication, maximum reach, and global impact.",
@@ -23,6 +24,7 @@ export default function RootLayout({
           
         </Suspense>
         {children}
+        <Toaster />
        
       </body>
     </html>
