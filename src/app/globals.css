@@ -142,7 +142,7 @@
     background: linear-gradient(180deg, color-mix(in oklab, var(--color-accent-1) 16%, white) 0%, white 70%);
   }
   .tag-pill {
-    @apply inline-flex items-center rounded-full bg-muted px-3 py-2 text-xs font-medium /80 shadow-sm;
+    @apply inline-flex items-center rounded-full bg-muted px-3 py-2 text-xs font-medium  shadow-sm;
   }
   .tag-pill-active {
     @apply bg-white ring-1 ring-brand ;

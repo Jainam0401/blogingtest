@@ -69,7 +69,8 @@ export function SuvitFooter({ className }: Props) {
             />
             <div className="flex flex-col sm:flex-row sm:items-center gap-0 sm:gap-3">
               <span className="font-semibold tracking-tight text-2xl">SUVIT</span>
-              <span className="text-sm ">Powering CA's Office</span>
+              <span className="text-sm">Powering CA&#39;s Office</span>
+
             </div>
           </div>
 

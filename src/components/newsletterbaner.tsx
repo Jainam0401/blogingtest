@@ -1,8 +1,6 @@
 "use client"
 
 import type * as React from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 
 type NewsletterBannerProps = {
@@ -15,7 +13,7 @@ type NewsletterBannerProps = {
 export function NewsletterBanner({
   title = "Stay Up-to-date!",
   description = "The industry insights you need delivered to your inbox monthly.",
-  onSubscribe,
+  
   className,
 }: NewsletterBannerProps) {
 

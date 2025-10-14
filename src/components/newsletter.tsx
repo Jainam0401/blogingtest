@@ -5,8 +5,7 @@ import { useState } from "react"
 const TAGS = ["All", "Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5"]
 
 export function Newsletter() {
-  const [active, setActive] = useState("All")
-
+  
   return (
     <div className=" w-full bg-sky-200 py-12 px-6 md:px-10">
       {/* Heading Section */}
@@ -46,7 +45,7 @@ export function Newsletter() {
           {TAGS.map((t, index) => (
             <div key={t} className="flex items-center">
               <button
-                onClick={() => setActive(t)}
+               
                 className={`w-[75px] h-[32px] flex items-center justify-center px-4 py-1 rounded-[3px] 
                      bg-white/50 shadow-[0_1px_2px_0_#00000026,0_0_5px_0_#1718180D]
                      text-gray-800 text-sm font-medium 
