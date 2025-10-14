@@ -24,17 +24,16 @@ export function NewsletterBanner({
     <section
       aria-label="Newsletter subscription"
       className={cn(
-        "relative overflow-hidden mx-auto shadow-lg",
+        "  overflow-hidden mx-auto shadow-lg",
         "bg-gradient-to-r from-[#7393F2]  to-[#BFEDFF]",
         // Background gradient using design tokens
       className,
       )}
     >
-      {/* Subtle dotted texture overlay */}
-   
-      <div className="mx-auto max-w-7xl px-6 py-10 md:py-12">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <div className="max-w-xl">
+    
+      <div className="mx-auto    py-10 md:py-12">
+        <div className="flex flex-col  px-16 items-start justify-between gap-6 md:flex-row md:items-center">
+          <div className="max-w-xl  tracking-normal">
             <h2 className="text-balance text-3xl font-semibold tracking-tight text-[color:var(--color-primary-foreground)] md:text-4xl">
               {title}
             </h2>
@@ -42,9 +41,10 @@ export function NewsletterBanner({
               {description}
             </p>
           </div>
+<div className="">
 
        <form
-        className="mx-auto mt-8 flex items-center gap-3 rounded-lg bg-white p-2 shadow-md"
+        className="mx-auto  flex items-center gap-3 rounded-lg bg-white p-2 shadow-md"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
@@ -60,6 +60,7 @@ export function NewsletterBanner({
           Subscribe
         </button>
       </form>
+</div>
 
         </div>
       </div>

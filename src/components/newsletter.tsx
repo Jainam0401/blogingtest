@@ -48,7 +48,7 @@ export function Newsletter() {
               <button
                 onClick={() => setActive(t)}
                 className={`w-[75px] h-[32px] flex items-center justify-center px-4 py-1 rounded-[3px] 
-                     bg-[#F0EEEB] shadow-[0_1px_2px_0_#00000026,0_0_5px_0_#1718180D]
+                     bg-white/50 shadow-[0_1px_2px_0_#00000026,0_0_5px_0_#1718180D]
                      text-gray-800 text-sm font-medium 
                             `}
               >
@@ -57,7 +57,7 @@ export function Newsletter() {
 
               {/* Line after "All" */}
               {t === "All" && (
-                <div className="mx-2 ml-2 w-[1px] h-6 bg-white opacity-40"></div>
+                <div className="mx-0 ml-2 w-[1px] h-6 bg-white"></div>
               )}
             </div>
           ))}

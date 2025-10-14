@@ -3,7 +3,7 @@ import Tags from "./ui/tags";
 
 export function FeaturedArticle() {
   return (
-    <section className="py-10 max-w-6xl mx-auto">
+    <section className="py-10 max-w-7xl mx-auto">
       <div className="relative rounded-3xl bg-card border-l-6 border-sky-400  card-shadow overflow-hidden">
         <div className="flex  flex-col md:flex-row">
           {/* Text Content */}

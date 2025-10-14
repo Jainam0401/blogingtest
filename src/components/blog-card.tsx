@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 
 type BlogCardProps = {
-  title: string
-  excerpt: string
-  image?: string
-  tags?: string[]
-  author?: string
-  date?: string
-  avatar?: string
-}
+  title: string;
+  excerpt: string;
+  image?: string;
+  tags?: string[];
+  author?: string;
+  date?: string;
+  avatar?: string;
+};
 
 export function BlogCard({
   title,
@@ -22,59 +22,53 @@ export function BlogCard({
   avatar,
 }: BlogCardProps) {
   return (
-    <article className="group overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border">
-      {/* blog image */}
-     {image && <div className="relative h-48 w-full md:h-56">
-        <Image
-          src={"/hero.png"}
-          alt={title}
-          fill
-          className="object-cover"
-        />
-      </div>}
+    <article className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200 transition hover:shadow-md">
+      {image && (
+        <div className="relative h-48 w-full md:h-52">
+          <Image src={"/hero.png"} alt={title} fill className="object-cover" />
+        </div>
+      )}
 
-      <div className="p-6">
-        <h4 className="text-xl font-semibold">{title}</h4>
+      <div className="flex flex-col justify-between flex-grow px-6 py-5">
+        <div>
+          <h4 className="text-lg font-semibold leading-snug line-clamp-2">
+            {title}
+          </h4>
 
-        {/* tags */}
-        {tags.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className=" h-[32px] flex items-center justify-center px-4 py-1 rounded-[4px] 
-                     bg-[#F0EEEB] shadow-[0_1px_2px_0_#00000026,0_0_5px_0_#1718180D]
-                     text-gray-800 text-sm font-medium mix-blend-multiply0"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+          {tags.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="rounded-xs bg-[#F0EEEB] px-3 py-1 text-xs font-medium text-gray-700 shadow-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
 
-        <p className="mt-3  line-clamp-3">{excerpt}</p>
+          <p className="mt-3 text-sm  line-clamp-3">
+            {excerpt.length > 100 ? excerpt.substring(0, 100) + "..." : excerpt}
+          </p>
+        </div>
 
-        <div className="mt-6 flex items-center justify-between">
+        <div className="mt-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image
               src={avatar || "/avatar-placeholder.png"}
               alt={author}
               width={32}
               height={32}
-              className="rounded-full"
+              className="rounded-full object-cover"
             />
-            <span className="font-medium">{author}</span>
+            <span className="text-sm font-medium text-gray-900">{author}</span>
           </div>
-          {date && <span className="text-sm ">{date}</span>}
+          {date && <span className="text-xs ">{date}</span>}
         </div>
       </div>
 
-
-
-
-
-      {/* subtle blue underline accent */}
-      <div className="h-2 w-full mt-10 bg-brand/70" />
+      <div className="h-[4px] w-full bg-blue-400 mt-auto" />
     </article>
-  )
+  );
 }

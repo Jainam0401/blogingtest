@@ -5,7 +5,7 @@ import { HeroBanner } from "@/components/hero-banner"
 import { Newsletter } from "@/components/newsletter"
 import { FeaturedArticle } from "@/components/featured-article"
 import { BlogGrid } from "@/components/blog-grid"
-import { Footer } from "@/components/footer"
+import { SuvitFooter } from "@/components/footer"
 import NewsletterBanner from "@/components/newsletterbaner"
 import { useEffect, useState } from "react"
 import { blogswithImages, blogswithoutImages } from "./actions/users"
@@ -53,22 +53,27 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="mx-auto w-full bg-sky-200 px-4 md:px-6">
-        <FeaturedArticle />
-      </section>
+    <section className="relative w-full">
+  {/* Background Layer */}
+  <div className="absolute top-0 left-0 w-full h-1/2 bg-sky-200 rounded-b-full z-0" />
+
+  {/* Foreground Content */}
+  <div className="relative z-10 mx-auto w-full px-4 md:px-6">
+    <FeaturedArticle />
+  </div>
+</section>
+
 <section className="mx-auto w-full max-w-6xl px-4 md:px-6">
        
         <BlogGrid blogs={blogsWithImages} />
       </section>
-
-      {/* Blogs without images */}
-       
-      <section className="  ">
+ 
+      <section className="py-16  ">
         <NewsletterBanner />
       </section>
 
-      {/* Blogs with images */}
-      <section className="mx-auto mt-30 w-full max-w-8xl px-4 md:px-6">
+    
+      <section className="mx-auto  w-full max-w-8xl px-4 md:px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {blogs.map((blog) => (
             <BlogCard
@@ -90,11 +95,11 @@ export default function Page() {
 
 
 
-      <div className="mx-auto w-full px-4 md:px-6">
+      <div className="mx-auto w-full py-6 px-4 md:px-6">
         <HeroBanner />
       </div>
 
-      <Footer />
+      <SuvitFooter />
     </main>
   )
 }

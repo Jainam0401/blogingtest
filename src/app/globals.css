@@ -127,7 +127,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background ;
   }
 }
 
@@ -142,10 +142,10 @@
     background: linear-gradient(180deg, color-mix(in oklab, var(--color-accent-1) 16%, white) 0%, white 70%);
   }
   .tag-pill {
-    @apply inline-flex items-center rounded-full bg-muted px-3 py-2 text-xs font-medium text-foreground/80 shadow-sm;
+    @apply inline-flex items-center rounded-full bg-muted px-3 py-2 text-xs font-medium /80 shadow-sm;
   }
   .tag-pill-active {
-    @apply bg-white ring-1 ring-brand text-foreground;
+    @apply bg-white ring-1 ring-brand ;
   }
   .card-shadow {
     box-shadow: 0 12px 24px rgba(16, 73, 178, 0.12), 0 2px 4px rgba(16, 73, 178, 0.06);

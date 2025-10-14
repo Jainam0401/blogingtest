@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b">
       <div className="mx-auto flex h-16 w-full items-center justify-between px-4 md:px-6">
         <Link href="#" className="flex items-center gap-2">
-<Image src="/logo.svg" alt="Logo" width={32} height={32} />
-          <span className="text-2xl font-semibold  ">SUVIT</span>
+          <Image src="/logo.svg" alt="Logo" width={32} height={32} />
+          <span className="text-3xl font-semibold  ">SUVIT</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <Link href="#" className=" font-inter hover:text-foreground transition">
+          <Link href="#" className=" font-inter hover: transition">
             Modules <span aria-hidden>▾</span>
           </Link>
-          <Link href="#" className=" font-inter hover:text-foreground transition">
+          <Link href="#" className=" font-inter hover: transition">
             Pricing
           </Link>
-          <Link href="#" className=" font-inter hover:text-foreground transition">
+          <Link href="#" className=" font-inter hover: transition">
             About
           </Link>
-          <Link href="#" className=" font-inter hover:text-foreground transition">
+          <Link href="#" className=" font-inter hover: transition">
             Resource <span aria-hidden>▾</span>
           </Link>
         </nav>
@@ -45,7 +45,7 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

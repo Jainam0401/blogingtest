@@ -10,7 +10,7 @@ type BlogGridProps = {
 export function BlogGrid({ blogs }: BlogGridProps) {
   return (
     <section className="py-10">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {blogs.map((blog) => (
           <BlogCard
             key={blog.id}
