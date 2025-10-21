@@ -1,26 +1,45 @@
-"use client"
+"use client";
 
-import { Navbar } from "@/components/navbar"
-import { HeroBanner } from "@/components/hero-banner"
-import { Newsletter } from "@/components/newsletter"
-import { FeaturedArticle } from "@/components/featured-article"
-import { BlogGrid } from "@/components/blog-grid"
-import { SuvitFooter } from "@/components/footer"
-import NewsletterBanner from "@/components/newsletterbaner"
-import { useEffect, useState } from "react"
-import { BlogCard } from "@/components/blog-card"
-import { getFinanceNews } from "./actions/getnews"
-
+import { useEffect, useState } from "react";
+import { Navbar } from "@/components/navbar";
+import { HeroBanner } from "@/components/hero-banner";
+import { Newsletter } from "@/components/newsletter";
+import { FeaturedArticle } from "@/components/featured-article";
+import { BlogGrid } from "@/components/blog-grid";
+import { SuvitFooter } from "@/components/footer";
+import NewsletterBanner from "@/components/newsletterbaner";
+import { BlogCard } from "@/components/blog-card";
+import { getFinanceNews } from "./actions/getnews";
+import  Loader  from "@/components/loader"; // ✅ Import your loader here
 
 export default function Page() {
-  const [blogs, setBlogs] = useState<any[]>([])
+  const [blogs, setBlogs] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true); // ✅ Loading state
 
-  useEffect(() => {
-    ;(async () => {
-      const data = await getFinanceNews()
-      setBlogs(data)
-    })()
-  }, [])
+  useEffect(  () => {
+    (async () => {
+      try {
+        const data = await getFinanceNews();
+        setBlogs(data);
+      } catch (err) {
+        console.error("Error loading blogs:", err);
+      } finally {
+        setTimeout(() => {
+          setLoading(false); // ✅ Stop loading once data is fetched or on error
+          
+        }, 2000);
+      }
+    })();
+  }, []);
+
+  // ✅ Show loader while loading
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-sky-100 flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-dvh">
@@ -36,7 +55,6 @@ export default function Page() {
         <div className="absolute top-0 left-0 w-full h-1/2 bg-sky-200 rounded-b-full z-0" />
         <div className="relative z-10 mx-auto w-full px-4 md:px-6">
           <FeaturedArticle />
-          
         </div>
       </section>
 
@@ -74,5 +92,5 @@ export default function Page() {
 
       <SuvitFooter />
     </main>
-  )
+  );
 }

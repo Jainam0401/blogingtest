@@ -24,7 +24,7 @@ export default function RootLayout({
           
         </Suspense>
         {children}
-        <Toaster />
+        <Toaster className="bg-sky-200 text-green"  />
        
       </body>
     </html>

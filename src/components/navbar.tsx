@@ -22,7 +22,7 @@ export function Navbar() {
 
               {/* Solutions */}
               <NavigationMenu.Item>
-                <NavigationMenu.Trigger className="px-3 py-2 font-medium focus:outline-none">
+                <NavigationMenu.Trigger className="px-3 py-2  focus:outline-none">
                   Solutions
                 </NavigationMenu.Trigger>
                 <NavigationMenu.Content className="bg-white shadow-md rounded-md">
@@ -38,7 +38,7 @@ export function Navbar() {
                             href="#"
                             className="block rounded-md p-3 hover:bg-gray-50 transition"
                           >
-                            <div className="font-medium">{title}</div>
+                            <div className="">{title}</div>
                             <p className="text-sm text-muted-foreground">{desc}</p>
                           </Link>
                         </NavigationMenu.Link>
@@ -50,7 +50,7 @@ export function Navbar() {
 
               {/* Resources */}
               <NavigationMenu.Item>
-                <NavigationMenu.Trigger className="px-3 py-2 font-medium focus:outline-none">
+                <NavigationMenu.Trigger className="px-3 py-2  focus:outline-none">
                   Resources
                 </NavigationMenu.Trigger>
                 <NavigationMenu.Content className="bg-white shadow-md rounded-md">
@@ -66,7 +66,7 @@ export function Navbar() {
                             href="#"
                             className="block rounded-md p-3 hover:bg-gray-50 transition"
                           >
-                            <div className="font-medium">{title}</div>
+                            <div className="">{title}</div>
                             <p className="text-sm text-muted-foreground">{desc}</p>
                           </Link>
                         </NavigationMenu.Link>
@@ -79,7 +79,7 @@ export function Navbar() {
               {/* About Us */}
               <NavigationMenu.Item className="mt-2">
                 <NavigationMenu.Link asChild>
-                  <Link href="/about" className="px-3 py-2  font-medium">
+                  <Link href="/about" className="px-3 py-2  ">
                     About Us
                   </Link>
                 </NavigationMenu.Link>
