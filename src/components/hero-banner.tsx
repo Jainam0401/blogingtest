@@ -18,26 +18,47 @@ export function HeroBanner() {
               </a>
             </div>
           </div>
+<div className="relative md:col-span-5 flex items-center justify-center">
+  {/* Central circular section */}
+  <div className="relative h-64 w-64 rounded-full bg-white/30 shadow-xl flex items-center justify-center">
+    <span className="h-36 w-36 rounded-full bg-white/70 block shadow" aria-hidden />
 
-          <div className="relative md:col-span-5">
-            {/* Central badge */}
-            <div className="mx-auto h-64 w-64 rounded-full  bg-white/30 shadow-xl flex items-center justify-center">
-              <span className="h-36 w-36 rounded-full bg-white/70 block shadow" aria-hidden />
-            </div>
+    {/* Badges positioned evenly around the circle */}
+    <Badge
+      text="GST automation"
+      className="absolute -top-0 -left-14 rounded-none"
+    />
+    <Badge
+      text="Client Communication"
+      className="absolute -top-0 -right-14 rounded-none"
+    />
+    <Badge
+      text="Tally"
+      className="absolute top-20 -right-6 italic rounded-none"
+    />
+    <Badge
+      text="Chanakya AI"
+      className="absolute bottom-12 -right-14 rounded-none"
+    />
+    <Badge
+      text="Data-entry Automation"
+      className="absolute bottom-20 -left-28 rounded-none"
+    />
 
-            {/* Floating badges */}
-            <Badge text="GST automation" className="left-32 rounded-none top-2" />
-            <Badge text="Client Communication" className="rounded-none right-24 top-8" />
-            <Badge text="Data-entry Automation" className="rounded-none left-40 bottom-5 -translate-x-1/2" />
-            <Badge text="Chanakya AI" className="rounded-none right-36 bottom-12" />
-            {/* WhatsApp badge (green square) */}
-            
-              <Image src={"/whatsapp.png"} width={60} height={60} alt="WhatsApp" className="top-56 left-64 absolute"  />
-            
+    {/* WhatsApp icon centered below */}
+    <Image
+      src="/whatsapp.png"
+      width={60}
+      height={60}
+      alt="WhatsApp"
+      className="absolute -bottom-6 left-1/2 -translate-x-1/2"
+    />
+  </div>
 
-            {/* Soft circular accent */}
-            <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
-          </div>
+  {/* Subtle background glow */}
+  <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
+</div>
+
         </div>
       </div>
     </section>

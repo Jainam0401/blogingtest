@@ -1,11 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-
-const TAGS = ["All", "Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5"]
+const TAGS = [
+  "All",
+  "Taxation",
+  "GST & Indirect Tax",
+  "Audit",
+  "Financial Planning",
+  "Business Advisory",
+  "Compliance & Legal",
+  "Startup Consulting",
+];
 
 export function Newsletter() {
-  
   return (
     <div className=" w-full bg-sky-200 py-12 px-6 md:px-10">
       {/* Heading Section */}
@@ -14,7 +20,8 @@ export function Newsletter() {
           Stay Updated with Suvit’s Expert Insights
         </h2>
         <p className="mt-3 font-medium text-gray-700">
-          Learn about the latest trends in GST, accounting automation, and CA best practices.
+          Learn about the latest trends in GST, accounting automation, and CA
+          best practices.
         </p>
       </div>
 
@@ -44,26 +51,24 @@ export function Newsletter() {
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           {TAGS.map((t, index) => (
             <div key={t} className="flex items-center">
+              
               <button
-               
-                className={`w-[75px] h-[32px] flex items-center justify-center px-4 py-1 rounded-[3px] 
-                     bg-white/50 shadow-[0_1px_2px_0_#00000026,0_0_5px_0_#1718180D]
+                className={` ${t === "All"?"bg-white ":" bg-white/50" }   h-[32px] flex items-center justify-center px-4 py-1 rounded-[3px] 
+                     shadow-[0_1px_2px_0_#00000026,0_0_5px_0_#1718180D]
                      text-gray-800 text-sm font-medium 
                             `}
               >
                 {t}
               </button>
 
-              {/* Line after "All" */}
-              {t === "All" && (
-                <div className="mx-0 ml-2 w-[1px] h-6 bg-white"></div>
-              )}
+             
+              
             </div>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Newsletter
+export default Newsletter;

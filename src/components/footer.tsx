@@ -68,7 +68,7 @@ export function SuvitFooter({ className }: Props) {
               className="rounded-sm"
             />
             <div className="flex flex-col sm:flex-row sm:items-center gap-0 sm:gap-3">
-              <span className="font-semibold tracking-tight text-2xl">SUVIT</span>
+              <span className="font-semibold mb-1 tracking-tight text-2xl">SUVIT</span>
               <span className="text-sm">Powering CA&#39;s Office</span>
 
             </div>
@@ -131,7 +131,7 @@ export function SuvitFooter({ className }: Props) {
                 <ul className="space-y-3 text-sm">
                   {links.map((text) => (
                     <li key={text}>
-                      <Link href="#" className="hover:">
+                      <Link href="#" className="hover:underline">
                         {text}
                       </Link>
                     </li>

@@ -20,12 +20,14 @@ export function BlogCard({
   author = "Unknown Author",
   date = "",
   avatar,
+  
 }: BlogCardProps) {
   return (
     <article className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200 transition hover:shadow-md">
       {image && (
         <div className="relative h-48 w-full md:h-52">
-          <Image src={"/hero.png"} alt={title} fill className="object-cover" />
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+
         </div>
       )}
 
@@ -55,13 +57,10 @@ export function BlogCard({
 
         <div className="mt-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Image
-              src={avatar || "/avatar-placeholder.png"}
-              alt={author}
+            <img src={avatar} alt={author}
               width={32}
-              height={32}
-              className="rounded-full object-cover"
-            />
+              height={32} className="rounded-full object-cover" />
+            
             <span className="text-sm font-medium text-gray-900">{author}</span>
           </div>
           {date && <span className="text-xs ">{date}</span>}

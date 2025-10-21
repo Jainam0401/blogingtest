@@ -1,17 +1,14 @@
 "use client"
 
+import { Key } from "react"
 import { BlogCard } from "./blog-card"
-import type { BlogWithUser } from "@/app/page"
 
-type BlogGridProps = {
-  blogs: BlogWithUser[]
-}
 
-export function BlogGrid({ blogs }: BlogGridProps) {
+export function BlogGrid({ blogs }: any) {
   return (
     <section className="py-10">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-        {blogs.map((blog) => (
+        {blogs.map((blog: { id: Key | null | undefined; title: string; content: string; image: string | undefined; tags: string[] | undefined; users: { name: string | undefined; pfp: string | undefined }; createdAt: string | number | Date }) => (
           <BlogCard
             key={blog.id}
             title={blog.title}
