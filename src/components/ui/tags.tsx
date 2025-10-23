@@ -5,7 +5,7 @@ import React from "react"
 
 export default function Tags( { tags }: { tags: string[] } ) {
   return (
-    <div className="flex gap-2 font-inter">
+    <div className="flex md:flex-row flex-col gap-3 md:gap-2 font-inter">
       {tags.map((tag) => (
         <span
           key={tag}

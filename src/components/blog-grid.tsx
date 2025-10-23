@@ -6,7 +6,7 @@ import { BlogCard } from "./blog-card"
 
 export function BlogGrid({ blogs }: any) {
   return (
-    <section className="py-10">
+    <section className="">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {blogs.map((blog: { id: Key | null | undefined; title: string; content: string; image: string | undefined; tags: string[] | undefined; users: { name: string | undefined; pfp: string | undefined }; createdAt: string | number | Date }) => (
           <BlogCard

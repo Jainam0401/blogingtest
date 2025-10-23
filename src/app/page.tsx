@@ -51,7 +51,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative w-full">
+      <section className="relative py-6 w-full">
         <div className="absolute top-0 left-0 w-full h-1/2 bg-sky-200 rounded-b-full z-0" />
         <div className="relative z-10 mx-auto w-full px-4 md:px-6">
           <FeaturedArticle />
@@ -62,13 +62,13 @@ export default function Page() {
         <BlogGrid blogs={blogs.slice(3, 6)} />
       </section>
 
-      <section className="py-14">
+      <section className="py-10">
         <NewsletterBanner />
       </section>
 
-      <section className="mx-auto w-full max-w-8xl px-4 md:px-6">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {blogs.map((blog) => (
+      <section className="mx-auto w-full max-w-7xl px-4 md:px-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {blogs.slice(0,9).map((blog) => (
             <BlogCard
               key={blog.id}
               title={blog.title}

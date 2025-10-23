@@ -22,7 +22,7 @@ export function BlogCard({
   
 }: BlogCardProps) {
   return (
-    <article className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200 transition hover:shadow-md">
+    <article className="group flex flex-col justify-between overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200  transition-transform duration-300  hover:-translate-y-1 hover:shadow-md">
       {image && (
         <div className="relative h-48 w-full md:h-52">
         <img src={image} alt={title} className="w-full h-full object-cover" />

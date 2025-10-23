@@ -35,9 +35,9 @@ export function Newsletter() {
   };
 
   return (
-    <div className="w-full bg-sky-200 py-12 px-6 md:px-10">
-      {/* Heading Section */}
-      <div className="text-center max-w-5xl mx-auto">
+    <div className="w-full bg-sky-200 py-12  ">
+
+      <div className="text-center max-w-5xl mx-auto ">
         <h2 >
           <SplitText className="text-balance text-3xl font-semibold py-2 md:text-5xl" splitType="words"  text="Stay Updated with Suvit’s Expert Insights" />
           
@@ -48,29 +48,31 @@ export function Newsletter() {
         </p>
       </div>
 
-      {/* Newsletter Form */}
-      <form
-        className="mx-auto mt-8 flex max-w-lg items-center gap-3 rounded-lg bg-white p-2 shadow-md"
-        onSubmit={handleSubmit}
-      >
-        <input
-          type="email"
-          className="h-11 flex-1 rounded-md px-4 text-sm outline-none"
-          placeholder="Email Address"
-          aria-label="Email Address"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button
-          type="submit"
-          className="h-11 rounded-md px-5 text-sm font-semibold text-white bg-gradient-to-r from-sky-500 to-blue-600 hover:opacity-90"
-        >
-          Subscribe
-        </button>
-      </form>
+   <div className="px-3 sm:px-6 lg:px-8">
+  <form
+    className="mx-auto mt-8 flex w-full max-w-lg flex-col gap-3 rounded-lg bg-white md:p-2 p-2  shadow-md sm:flex-row sm:items-center"
+    onSubmit={handleSubmit}
+  >
+    <input
+      type="email"
+      className="h-11 w-full rounded-md px-4 text-sm "
+      placeholder="Email Address"
+      aria-label="Email Address"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+    />
+    <button
+      type="submit"
+      className="h-11  w-full rounded-md bg-gradient-to-r from-sky-500 to-blue-600 px-4 text-sm font-semibold text-white hover:opacity-90 sm:w-auto"
+    >
+      Subscribe
+    </button>
+  </form>
+</div>
 
-      {/* Tags Section */}
-      <div className="mt-10 text-center">
+      
+      <div className="mt-10 px-2 text-center">
         <h3 className="text-lg font-semibold">Filters based on tags</h3>
 
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
